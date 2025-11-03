@@ -403,7 +403,7 @@ def get_server_info() -> Dict:
     }
 
 # ---- Main Function ----
-def main(transport: str = "stdio", port: int = 8000):
+def main(transport: str = "stdio", port: int = 2010):
     if transport == "http":
         import asyncio
         # Set the port for HTTP transport
@@ -443,8 +443,8 @@ if __name__ == "__main__":
         "-p",
         "--port",
         type=int,
-        default=8000,
-        help="Port to run the MCP server on (default: 8000)"
+        default=2010,
+        help="Port to run the MCP server on (default: 2010)"
     )
     args = parser.parse_args()
     main(args.transport, args.port)
